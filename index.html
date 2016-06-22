@@ -7,7 +7,52 @@
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
   <body class="container-fluid">
-    <div class="content">
+    <article>
+      <form id="sign-up" class="signed-out">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form id="sign-in" class="signed-out">
+        <fieldset>
+          <legend>Sign In!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign In">
+        </fieldset>
+      </form>
+
+      <form id="sign-out" class="signed-in">
+        <fieldset>
+          <legend>Sign Out!</legend>
+          <input class="sign-out" type="submit" value="Sign Out">
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="signed-in">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="Current Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+    </article>
+
+    <br><br>
+
+    <button class="signed-in" id="titles">Titles</button>
+    <button class="signed-in" id="all-books">All Books</button>
+    <button class="signed-in" id="hide-books">Hide Books</button>
+
+    <br><br>
+
+    <div class="content signed-in">
     </div>
   </body>
 </html>

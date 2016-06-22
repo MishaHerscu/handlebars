@@ -17,11 +17,15 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
+  $('.signed-in').show();
+  $('.signed-out').hide();
 };
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
+  $('.signed-in').hide();
+  $('.signed-out').show();
 };
 
 module.exports = {

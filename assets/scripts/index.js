@@ -4,35 +4,13 @@
 // let example = require('./example');
 
 const authEvents = require('./auth/events.js');
+const bookEvents = require('./books/book-events.js');
 
-let displayBooks = function(books){
-  let bookListingTemplate = require('./templates/book-listing.handlebars');
-  for (let i = 0; i < books.length; i++) {
-    $('.content').append(bookListingTemplate({
-      books:[
-        {
-        title: books[i].title,
-        desc: books[i].desc
-        }
-      ]
-    }));
-  }
-};
-
-
-let getBooks = function(){
-  return $.ajax({
-    url: "http://book-json.herokuapp.com/books",
-    // method: 'GET',
-    // dataType: 'json'
-  }).done(function(books){
-    displayBooks(books);
-  });
-};
-
+$('.signed-in').hide();
+$('.signed-out').show();
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
-  getBooks();
+  bookEvents.addHandlers();
 });

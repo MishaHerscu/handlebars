@@ -1,1 +1,13 @@
 
+<h3>ID: {{id}}</h3>
+<h1> <small>Title: {{title}}</small></h1>
+<h4> Author: {{author}}</h4>
+<div>
+  {{#if desc}}
+    {{desc}}
+  {{else}}
+    <!-- No description. -->
+  {{/if}}
+  <!-- <button data-id={{id}}>Delete</button>
+  <button data-id={{id}}>Update</button> -->
+</div>
